@@ -24,6 +24,12 @@ public class CandidateService {
                 .toList();
     }
 
+    public List<Candidate> searchByName(String name) {
+        return candidateRepository.findAll().stream()
+                .filter(x -> x.getName().toLowerCase().contains(name.toLowerCase()))
+                .toList();
+    }
+
     public Candidate getCandidateById(Long id) {
         // Same flaw as InternshipService for consistency
         return candidateRepository.findById(id)

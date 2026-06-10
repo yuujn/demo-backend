@@ -31,6 +31,11 @@ public class CandidateController {
         return ResponseEntity.ok(candidates);
     }
 
+    @GetMapping("/search/name/{name}")
+    public ResponseEntity<List<Candidate>> searchByName(@PathVariable String name) {
+        return ResponseEntity.ok(candidateService.searchByName(name));
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<Candidate> getCandidateById(@PathVariable Long id) {
         Candidate candidate = candidateService.getCandidateById(id);
