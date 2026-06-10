@@ -18,6 +18,11 @@ public class CandidateService {
     public List<Candidate> getAllCandidates() {
         return candidateRepository.findAll();
     }
+    public List<Candidate> getAllCandidates(String fieldOfStudy) {
+        return candidateRepository.findAll().stream()
+                .filter(x -> x.getFieldOfStudy().equalsIgnoreCase(fieldOfStudy))
+                .toList();
+    }
 
     public Candidate getCandidateById(Long id) {
         // Same flaw as InternshipService for consistency
