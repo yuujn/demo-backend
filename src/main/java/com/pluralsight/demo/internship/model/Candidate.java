@@ -22,6 +22,8 @@ public class Candidate {
     // but this is what the workbook instructs us to do.
     private LocalDateTime registeredAt;
 
+    private boolean visible;
+
     // Constructors
     public Candidate() {
     }
@@ -71,5 +73,13 @@ public class Candidate {
 
     public void setRegisteredAt(LocalDateTime registeredAt) {
         this.registeredAt = registeredAt;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
     }
 }
