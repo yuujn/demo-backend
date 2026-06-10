@@ -30,9 +30,7 @@ public class CandidateService {
     }
 
     public List<Candidate> searchByName(String name) {
-        return candidateRepository.findAll().stream()
-                .filter(x -> x.getName().toLowerCase().contains(name.toLowerCase()))
-                .toList();
+        return candidateRepository.findByNameContainingIgnoringCase(name);
     }
     public List<Candidate> searchByEmail(String email) {
         return candidateRepository.findAll().stream()
