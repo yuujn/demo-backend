@@ -10,4 +10,6 @@ import java.util.List;
 public interface CandidateRepository extends JpaRepository<Candidate, Long> {
     // No custom queries yet
     List<Candidate> findByNameContainingIgnoringCase(String name);
+
+    List<Candidate> findByEmailContainingIgnoreCase(String email);
 }
